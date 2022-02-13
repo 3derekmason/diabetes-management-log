@@ -1,0 +1,23 @@
+{
+  "name": "@dmlab/code-challenge-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "nodemon --exec \"npm run start start\" --ext .ts",
+    "start": "ts-node -r tsconfig-paths/register src/index.ts"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.13.4",
+    "@types/koa__router": "^8.0.11",
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.5.0",
+    "tsconfig-paths": "^3.12.0",
+    "typescript": "^4.5.5"
+  },
+  "dependencies": {
+    "@koa/router": "^10.1.1",
+    "koa": "^2.13.4"
+  }
+}
