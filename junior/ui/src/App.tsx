@@ -26,7 +26,7 @@ const useStatusMessage = () => {
     const testApiPing = async () => {
       try {
         const result = await client.get('/ping')
-        if (result.data === 'ok') setIsApiConnected(true)
+        if (result.data === 'pong') setIsApiConnected(true)
       } catch (e) {
         setIsApiConnected(false)
       }

@@ -5,7 +5,7 @@ Starter UI powered by React, and TypeScript
 ## Highlights
 
 - You **do not** have to use TypeScript. The initial template uses TypeScript, however you may write the entire submission in JavaScript. TypeScript is encouraged, but is not required.
-- You can use whatever library you like, but be prepared to justify your choice.
+- You can use whatever library you like, but be prepared to justify your choice. This includes functionality libraries, as well as component libraries such as MUI or Mantine.
 - You will not be judged on style / "prettiness" of the app. We aren't designers, and don't pretend you should be either. If you like to make things look nice, by all means, please do. However it won't be held against you if it looks basic. This allows you to focus on the code rather than the looks.
   - We'd like to see a usable UX. It should be easy to figure out how to do things within the app, it just doesn't need to be visually appealing.
 
@@ -25,7 +25,7 @@ Here is what we are looking for, and how your submission will be graded.
 
 #### Bonus
 
-- [ ] Provide a way to add the filters mentioned [here](../api/README.md#bonus).
+- [ ] Provide a way to add the filters mentioned [here](../api/README.md#api-filters).
 - [ ] If the user has loaded this page once, an additional network call is not made if the user navigates back to this page
   - If something has changed, another network call may be necessary. This refers to a user going to a detailed view, then coming immediately back to the list page. If nothing has changed, do not make another network call.
 

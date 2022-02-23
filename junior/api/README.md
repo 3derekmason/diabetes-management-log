@@ -5,7 +5,9 @@ We have provided a starter [Express](https://expressjs.com/) powered API, using 
 ## Usage
 
 - `npm ci`
-- `npm run start`
+- `npm run dev`
+
+Using `npm run start` with start the server, but will not restart the server when changed are made
 
 ## Highlights
 
@@ -52,7 +54,8 @@ You may also change the URL path to fit whatever meets your needs. We just want 
 
 - [ ] A GET request to `/entity` ( or whatever the plural version of your entity is ) returns a list of entities.
 
-#### Bonus
+#### Bonus {#api-filters}
+
 
 As a bonus, allow a set of JSON API standard query arguments to be applied on the request to filter, sort, and limit the entities being returned.
 
