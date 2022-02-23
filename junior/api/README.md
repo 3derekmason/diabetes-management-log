@@ -54,7 +54,7 @@ You may also change the URL path to fit whatever meets your needs. We just want 
 
 - [ ] A GET request to `/entity` ( or whatever the plural version of your entity is ) returns a list of entities.
 
-#### Bonus {#api-filters}
+#### Bonus
 
 
 As a bonus, allow a set of JSON API standard query arguments to be applied on the request to filter, sort, and limit the entities being returned.
