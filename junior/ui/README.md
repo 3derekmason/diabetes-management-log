@@ -25,7 +25,7 @@ Here is what we are looking for, and how your submission will be graded.
 
 #### Bonus
 
-- [ ] Provide a way to add the filters mentioned [here](../api/README.md#search-an-entity#bonus).
+- [ ] Provide a way to add the filters mentioned [here](../api/README.md#search-an-entity).
 - [ ] If the user has loaded this page once, an additional network call is not made if the user navigates back to this page
   - If something has changed, another network call may be necessary. This refers to a user going to a detailed view, then coming immediately back to the list page. If nothing has changed, do not make another network call.
 
