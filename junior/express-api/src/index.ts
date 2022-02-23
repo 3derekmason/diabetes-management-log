@@ -1,33 +1,38 @@
 import express from 'express'
+import cors from 'cors'
 
-import { getById } from './elastic-search'
-import type { Entity } from './interfaces'
+import { setupDb } from './sqlite'
 
 const app = express()
+app.use(cors())
 
-// Test ping
+/**
+ * Test ping, this is used by the UI to determine if they are connected properly.
+ * Once you see the connected message on the UI, you can remove this if you want to.
+ */
 app.get('/ping', (_, res) => {
-  res.send('ok')
+  res.send('pong')
 })
 
-app.get('/entities', (req, res) => {})
+app.get('/entity', (req, res) => {
+  // fetch many entities
+})
+app.post('/entity', (req, res) => {
+  // create a single entity
+})
+app.delete('/entity/:id', (req, res) => {
+  // delete a single entity
+})
+app.get('/entity/:id', (req, res) => {
+  // fetch a single entity
+})
 
-app.get('/entity/:id', async (req, res) => {
-  const id = req.params.id
-  if (id === undefined) {
-    res.sendStatus(400)
-    return
-  }
-
+app.listen(5010, async () => {
   try {
-    const item = await getById<Entity>(id)
-    if (item) return res.status(200).send(item)
-    else return res.sendStatus(404)
+    await setupDb()
+    console.log('🚀 Skynet is active')
   } catch (e) {
-    return res.sendStatus(500)
+    console.error(e)
+    throw new Error('There was an issue setting up the DB')
   }
-})
-
-app.listen(5010, () => {
-  console.log('🚀 Skynet is active')
 })

@@ -1,6 +1,6 @@
 # DML Coding Challenge // API
 
-We have provided a starter [Koa](https://koa.com) powered API.
+We have provided a starter [Express](https://expressjs.com/) powered API, using TypeScript.
 
 ## Usage
 
@@ -9,11 +9,18 @@ We have provided a starter [Koa](https://koa.com) powered API.
 
 ## Highlights
 
+- You **DO NOT** need to complete this in TypeScript. Everything is setup properly so you can start using JS if you'd prefer.
+  - TypeScript is encouraged, but not required.
 - You can make the data entity whatever you want it to be. Game of Thrones characters, Pokemon, politicians, books, whatever you want to do.
 - The routes can be named whatever you think makes sense. Right now they are called `entity`.
   - For example, to get an entity, a request is made to `/entity`. You can rename entity to whatever you wish.
   - This is not part of the grading, so don't feel too much pressure here. Have fun, or just leave it as entity if you don't feel like changing it.
-- We have provided some basic functionality to interact with Elastic. If this is useful, feel free to use it. You can also create your own with whatever data store you are most comfortable with.
+
+## Database
+
+We have provided a ready-to-go [SQLite](https://www.sqlite.org/index.html) database, using [Knex](https://knexjs.org/). These are just like SQL, and will work right out the box. If you do not wish to use these, that is perfectly acceptable. We have provided them as a means to save time configuring a data store. 
+
+If you prefer to use Mongo, ElasticSearch, etc, **please feel free to do so. It is NOT REQUIRED that you use what we have provided**. Use whatever you're most comfortable with.
 
 ## Acceptance Criteria
 
@@ -21,18 +28,29 @@ Here is what we are looking for, and how your submission will be graded.
 
 Any reference to `entity` can be replaced with whatever you decide to use, as described above.
 
+You may also change the URL path to fit whatever meets your needs. We just want them to make sense. Making a request to `/ba-lalala-bamba`, would be what we are not looking for. Great tune, though.
+
 ### Get an entity
 
-- [ ] A GET request to `/entity` returns the given entity, or a 404 status code if that entity does not exist.
+- [ ] A GET request to `/entity/:id` returns the given entity, or a 404 status code if that entity does not exist.
+
+### Creating an Entity
+
+- [ ] A POST request to `/entity` creates a new entity
+
+#### Bonus
+
+- [ ] Add some sort of validation with [Joi](https://joi.dev/), or a tool of your choosing to ensure that the request payload adheres to your schema expectations.
+- [ ] Send a proper rejection if the validation fails.
 
 ### Delete an entity
 
-- [ ] A DELETE request to `/entity` deletes the given entity, or a 404 status code if that entity does not exist.
+- [ ] A DELETE request to `/entity/:id` deletes the given entity, or a 404 status code if that entity does not exist.
 - [ ] A 200 status code, with a message of 'ok' or something similar is returned upon successful deletion.
 
 ### Search an entity
 
-- [ ] A GET request to `/entities` ( or whatever the plural version of your entity is ) returns a list of entities.
+- [ ] A GET request to `/entity` ( or whatever the plural version of your entity is ) returns a list of entities.
 
 #### Bonus
 
