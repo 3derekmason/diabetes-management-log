@@ -6,3 +6,4 @@ dist-ssr
 ui/bundle-size
 ui/build
 *.sqlite
+zip/submission.zip
