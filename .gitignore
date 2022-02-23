@@ -4,3 +4,4 @@ dist
 dist-ssr
 *.local
 ui/bundle-size
+ui/build
