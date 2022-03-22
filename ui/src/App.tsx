@@ -3,13 +3,13 @@ import { FC, useEffect, useState } from 'react'
 import { client } from './client'
 import './styles/App.css'
 
+import Test from './components/test.jsx'
+
 const App: FC = () => {
   const statusMessage = useStatusMessage()
   return (
     <div className='app'>
-      <div className='app-banner'>
-        <p style={{ whiteSpace: 'pre' }}>{statusMessage}</p>
-      </div>
+      <div className='app-banner'>{statusMessage}</div>
     </div>
   )
 }
@@ -34,9 +34,11 @@ const useStatusMessage = () => {
     testApiPing()
   }, [])
 
-  const statusMessage = isApiConnected
-    ? 'The API is connected. Feel free to get started!'
-    : 'The API is not connected. \nPlease follow the instructions in the API folder to start up the server'
+  const statusMessage = isApiConnected ? (
+    <Test />
+  ) : (
+    'The API is not connected. \nPlease follow the instructions in the API folder to start up the server'
+  )
   return statusMessage
 }
 
