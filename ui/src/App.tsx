@@ -3,7 +3,7 @@ import { FC, useEffect, useState } from 'react'
 import { client } from './client'
 import './styles/App.css'
 
-import Test from './components/test.jsx'
+import Home from './components/Home.jsx'
 
 const App: FC = () => {
   const statusMessage = useStatusMessage()
@@ -35,7 +35,7 @@ const useStatusMessage = () => {
   }, [])
 
   const statusMessage = isApiConnected ? (
-    <Test />
+    <Home />
   ) : (
     'The API is not connected. \nPlease follow the instructions in the API folder to start up the server'
   )
