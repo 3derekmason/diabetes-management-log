@@ -1,5 +1,8 @@
 import { AppBar, Card, Paper } from '@mui/material'
 import { useContext, useEffect, useState } from 'react'
+
+import '../styles/MainTile.css'
+
 import AppContext from '../context.js'
 
 import getDate from '../util/getDate'
