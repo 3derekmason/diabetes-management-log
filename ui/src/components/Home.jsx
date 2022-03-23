@@ -2,17 +2,16 @@ import { AppBar, Card, Paper } from '@mui/material'
 import { useEffect, useState } from 'react'
 
 import '../styles/Home.css'
-import client from '../client'
 
 const Home = () => {
-  useEffect(() => {
-    client.get('/entries').then(res => console.log(res))
-  }, [])
-
   return (
     <div>
       <AppBar style={{ background: '#9e9e9e' }}>Home Page</AppBar>
-      <Card className='homePage' style={{ background: '#424242' }}></Card>
+      <Card className='homePage' style={{ background: '#424242' }}>
+        {/* {entries.map(entry => (
+          <h4>entry</h4>
+        ))} */}
+      </Card>
     </div>
   )
 }
