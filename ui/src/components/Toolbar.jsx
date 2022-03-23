@@ -4,7 +4,7 @@ import { useContext, useEffect, useState } from 'react'
 import '../styles/Toolbar.css'
 import AppContext from '../context.js'
 
-const Toolbar = () => {
+const MainToolbar = () => {
   return (
     <Paper elevation={3} className='toolbar'>
       Toolbar
@@ -12,4 +12,4 @@ const Toolbar = () => {
   )
 }
 
-export default Toolbar
+export default MainToolbar
