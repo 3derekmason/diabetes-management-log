@@ -19,7 +19,7 @@ const App: FC = () => {
   }, [entries])
 
   return (
-    <AppContext.Provider value={{ entries }}>
+    <AppContext.Provider value={{ entries, setEntries }}>
       <div className='app'>
         <Home />
       </div>

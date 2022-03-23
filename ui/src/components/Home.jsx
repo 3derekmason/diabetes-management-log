@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from 'react'
 
 import '../styles/Home.css'
 
+import MainTile from './MainTile.jsx'
 import AppContext from '../context.js'
 
 const Home = () => {
@@ -14,7 +15,7 @@ const Home = () => {
       <AppBar style={{ background: '#9e9e9e' }}>Home Page</AppBar>
       <Card className='homePage' style={{ background: '#424242' }}>
         {entries.map((entry, i) => {
-          return <p key={i}>{JSON.stringify(entry)}</p>
+          return <MainTile data={entry} key={i} />
         })}
       </Card>
     </div>
