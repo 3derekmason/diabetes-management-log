@@ -3,7 +3,7 @@ import client from 'knex'
 
 import { entries } from './seed'
 
-export const knex = client({
+export const db = client({
   client: 'sqlite3',
   connection: {
     filename: './mydb.sqlite'
@@ -13,11 +13,11 @@ export const knex = client({
 
 export const setupDb = async () => {
   // If the table has already been created, don't try to create gain
-  const doesEntityTableExist = await knex.schema.hasTable('entries')
+  const doesEntityTableExist = await db.schema.hasTable('entries')
   if (doesEntityTableExist) return
 
   // Create an SQL table that matches the Entry interface
-  await knex.schema.createTable('entries', table => {
+  await db.schema.createTable('entries', table => {
     table.increments('id')
     table.string('date')
     table.integer('value')
@@ -26,7 +26,7 @@ export const setupDb = async () => {
 
   // Insert the dummy seed data to have something to start with.
   for (const entry of entries) {
-    await knex('entries').insert(entry)
+    await db('entries').insert(entry)
   }
 }
 

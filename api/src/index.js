@@ -2,7 +2,7 @@ import express from 'express'
 import cors from 'cors'
 
 import { setupDb } from './sqlite'
-import knex from './sqlite'
+import { db } from './sqlite'
 
 const app = express()
 app.use(cors())
@@ -11,13 +11,12 @@ app.get('/', (req, res) => {
   res.send({ data: 12345 })
 })
 
-app.get('/entries', (req, res) => {
-  // const query = 'SELECT * FROM entries'
-  // knext.query(query, (err, data) => {
-  //   if (err) console.log(err)
-  //   res.status(200).json(data.rows)
-  // })
-  res.send({ hello: 'world' })
+app.get('/entries', async (req, res) => {
+  // get all entries
+  await db
+    .select('*')
+    .from('entries')
+    .then(data => res.json(data))
 })
 app.post('/entry', (req, res) => {
   // create a single entity

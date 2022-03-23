@@ -5,7 +5,9 @@ import '../styles/Home.css'
 import client from '../client'
 
 const Home = () => {
-  useEffect(() => {}, [])
+  useEffect(() => {
+    client.get('/entries').then(res => console.log(res))
+  }, [])
 
   return (
     <div>
