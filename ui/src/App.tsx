@@ -1,6 +1,5 @@
 import { FC, useEffect, useState } from 'react'
 
-import { client } from './client'
 import './styles/App.css'
 
 import Home from './components/Home.jsx'

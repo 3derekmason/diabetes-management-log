@@ -1,7 +1,7 @@
-import { Entity } from '@/interfaces'
+import { Entry } from '@/interfaces'
 import client from 'knex'
 
-import { entities } from './seed'
+import { entries } from './seed'
 
 export const knex = client({
   client: 'sqlite3',
@@ -11,30 +11,27 @@ export const knex = client({
   useNullAsDefault: true
 })
 
-/**
- * Creates the in memory SQLite DB. This is setup for your convenience, feel free to use whatever data storage method you wish.
- * You don't need to worry about this, if you are not changing anything about entity
- */
 export const setupDb = async () => {
   // If the table has already been created, don't try to create gain
-  const doesEntityTableExist = await knex.schema.hasTable('entity')
+  const doesEntityTableExist = await knex.schema.hasTable('entries')
   if (doesEntityTableExist) return
 
-  // Create an SQL table that matches the Entity interface. This can be adjusted to fit your needs
-  await knex.schema.createTable('entity', table => {
+  // Create an SQL table that matches the Entry interface
+  await knex.schema.createTable('entries', table => {
     table.increments('id')
-    table.string('name')
-    table.integer('age')
+    table.string('date')
+    table.integer('value')
+    table.string('comment')
   })
 
-  // Insert the dummy seed data to have something to start with. This can also be adjusted to fit your needs
-  for (const entity of entities) {
-    await knex('entities').insert(entity)
+  // Insert the dummy seed data to have something to start with.
+  for (const entry of entries) {
+    await knex('entries').insert(entry)
   }
 }
 
 declare module 'knex/types/tables' {
   interface Tables {
-    entity: Entity
+    entries: Entry
   }
 }

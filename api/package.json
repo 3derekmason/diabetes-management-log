@@ -6,7 +6,7 @@
     "format": "prettier --write src",
     "lint": "eslint --ext .ts,.tsx src",
     "dev": "nodemon --exec \"npm run start start\" --ext .ts",
-    "start": "ts-node -r tsconfig-paths/register src/index.ts"
+    "start": "ts-node -r tsconfig-paths/register src/index.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
