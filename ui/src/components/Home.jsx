@@ -3,8 +3,9 @@ import { useContext, useEffect, useState } from 'react'
 
 import '../styles/Home.css'
 
-import MainTile from './MainTile.jsx'
-import AppContext from '../context.js'
+import Toolbar from './Toolbar'
+import MainTile from './MainTile'
+import AppContext from '../context'
 
 const Home = () => {
   const { entries } = useContext(AppContext)
@@ -14,6 +15,7 @@ const Home = () => {
     <div>
       <AppBar style={{ background: '#9e9e9e' }}>Home Page</AppBar>
       <Card className='homePage' style={{ background: '#424242' }}>
+        <Toolbar />
         {entries.map((entry, i) => {
           return <MainTile data={entry} key={i} />
         })}
