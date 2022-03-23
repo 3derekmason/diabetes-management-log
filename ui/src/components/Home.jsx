@@ -1,9 +1,14 @@
+import { Paper } from '@mui/material'
 import { useEffect, useState } from 'react'
+
+import '../styles/Home.css'
 
 const Home = () => {
   return (
     <div>
-      <h1>Home Page</h1>
+      <Paper className='homePage' elevation={3}>
+        Home Page
+      </Paper>
     </div>
   )
 }
