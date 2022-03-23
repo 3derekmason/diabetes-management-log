@@ -1,4 +1,4 @@
-import { Paper } from '@mui/material'
+import { Card, Paper } from '@mui/material'
 import { useEffect, useState } from 'react'
 
 import '../styles/Home.css'
@@ -6,9 +6,9 @@ import '../styles/Home.css'
 const Home = () => {
   return (
     <div>
-      <Paper className='homePage' elevation={3}>
+      <Card className='homePage' style={{ background: '#424242' }}>
         Home Page
-      </Paper>
+      </Card>
     </div>
   )
 }
