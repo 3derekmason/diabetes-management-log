@@ -27,7 +27,7 @@ const CreateNew = ({ details }) => {
         <Typography>Comments: </Typography>
         <TextField placeholder='Ex: After meal' multiline variant='standard' style={{ width: '95%' }} />
         <div className='formRow'>
-          <Button style={{ color: '#84ffff', marginTop: '16px' }}>Log Entry</Button>
+          <Button style={{ marginTop: '16px' }}>Log Entry</Button>
         </div>
       </Card>
     </Modal>
