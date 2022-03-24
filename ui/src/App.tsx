@@ -15,13 +15,16 @@ const App: FC = () => {
 
   // get all functions
   const getAllEntries = async () => {
-    await client.get('/entries').then(res => setEntries(res.data))
+    const res = await client.get('/entries')
+    setEntries(res.data)
   }
   const getHighToLow = async () => {
-    await client.get('/desc').then(res => setEntries(res.data))
+    const res = await client.get('/desc')
+    setEntries(res.data)
   }
   const getLowToHigh = async () => {
-    await client.get('/asc').then(res => setEntries(res.data))
+    const res = await client.get('/asc')
+    setEntries(res.data)
   }
 
   // conditionaly grab all entries
