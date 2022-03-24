@@ -25,9 +25,11 @@ const Home = () => {
       </AppBar>
       <Card className='homePage' style={{ background: '#424242' }}>
         <MainToolbar />
-        {entries.map((entry, i) => {
-          return <MainTile data={entry} key={i} />
-        })}
+        <div className='tileContainer'>
+          {entries.map((entry, i) => {
+            return <MainTile data={entry} key={i} />
+          })}
+        </div>
       </Card>
     </div>
   )

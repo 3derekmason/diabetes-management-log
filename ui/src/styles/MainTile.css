@@ -1,7 +1,20 @@
+* {
+  margin: 0;
+}
+
 .mainTile {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 32px;
+  gap: 48px;
+  height: 48px;
   width: 85%;
+}
+
+.dateTime {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
