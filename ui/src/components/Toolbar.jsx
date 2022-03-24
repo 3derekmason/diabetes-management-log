@@ -1,5 +1,5 @@
-import { AppBar, Button, Card, Paper, Typography } from '@mui/material'
-import { useContext, useEffect, useState } from 'react'
+import { Button, Paper, Typography } from '@mui/material'
+import { useContext } from 'react'
 
 import '../styles/Toolbar.css'
 import setValueColor from '../util/setValueColor'
@@ -7,7 +7,7 @@ import calcAverage from '../util/calcAverage'
 import AppContext from '../context.js'
 
 const MainToolbar = ({ data }) => {
-  const { entries, getAllEntries, setLowVal, setHighVal } = useContext(AppContext)
+  const { entries, setLowVal, setHighVal } = useContext(AppContext)
 
   return (
     <Paper elevation={3} style={{ background: '#212121', color: '#fff' }} className='toolbar'>
