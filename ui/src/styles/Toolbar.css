@@ -5,3 +5,10 @@
   justify-content: space-around;
   align-items: center;
 }
+
+.filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}

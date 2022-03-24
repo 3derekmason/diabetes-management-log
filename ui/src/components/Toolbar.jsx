@@ -7,7 +7,7 @@ import calcAverage from '../util/calcAverage'
 import AppContext from '../context.js'
 
 const MainToolbar = ({ data }) => {
-  const { entries } = useContext(AppContext)
+  const { entries, getAllEntries } = useContext(AppContext)
   return (
     <Paper elevation={3} style={{ background: '#212121', color: '#fff' }} className='toolbar'>
       <div className='averageGlucose'>
@@ -18,8 +18,19 @@ const MainToolbar = ({ data }) => {
           {calcAverage(entries)}
         </Typography>
       </div>
-      <div className='filter'>Sort by:</div>
-      <Button style={{ color: '#84ffff' }} onClick={data.handleCreateOpen}>
+      <div className='filter'>
+        <Typography>Order by: </Typography>
+        <Button variant='outlined' size='small'>
+          Low to High
+        </Button>
+        <Button variant='outlined' size='small' onClick={getAllEntries}>
+          Date
+        </Button>
+        <Button variant='outlined' size='small'>
+          High to Low
+        </Button>
+      </div>
+      <Button variant='contained' onClick={data.handleCreateOpen}>
         LOG ENTRY
       </Button>
     </Paper>
