@@ -1,4 +1,5 @@
 .homeContainer {
+  width: 100vw;
   margin: 0;
   display: flex;
   justify-content: center;
@@ -7,7 +8,7 @@
 
 .homePage {
   box-sizing: border-box;
-  min-height: 100vh;
+  height: 100%;
   width: 800px;
   background: #424242;
   padding-top: 88px;
@@ -17,16 +18,18 @@
   align-items: center;
   flex-direction: column;
   gap: 40px;
+  position: relative;
 }
 
 .tileContainer {
-  height: 100%;
+  height: 360px;
   width: 800px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  gap: 32px;
+  gap: 16px;
+  overflow: scroll;
 }
 
 .appbar {
