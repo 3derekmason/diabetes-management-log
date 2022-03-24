@@ -1,13 +1,10 @@
 const getTime = timeString => {
-  const time = timeString.split(' ')[4]
-  const segments = time.split(':')
-  let hour = segments[0]
-  let min = segments[1]
-  let ampm = 'AM'
-  if (hour > 12) {
-    hour = 24 - hour
-    ampm = 'PM'
-  }
+  const time = timeString.split(',')[1]
+  const timeSegments = time.split(':')
+  const hour = timeSegments[0]
+  const min = timeSegments[1]
+  const ampm = timeSegments[2].split(' ')[1]
+
   return hour + ':' + min + ' ' + ampm
 }
 

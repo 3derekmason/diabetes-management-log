@@ -6,6 +6,8 @@ import { db } from './sqlite'
 
 const app = express()
 app.use(cors())
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
 
 app.get('/', (req, res) => {
   res.send({ data: 12345 })
@@ -18,13 +20,17 @@ app.get('/entries', async (req, res) => {
     .from('entries')
     .then(data => res.json(data))
 })
-app.post('/entry', (req, res) => {
+app.post('/entries', async (req, res) => {
   // create a single entity
+  const entry = { date: req.body.date, value: req.body.value, comment: req.body.comments }
+  await db('entries')
+    .insert(entry)
+    .then(data => res.status(201).send(data))
 })
-app.delete('/entry/:id', (req, res) => {
+app.delete('/entries/:id', (req, res) => {
   // delete a single entity
 })
-app.get('/entry/:id', (req, res) => {
+app.get('/entries/:id', (req, res) => {
   // fetch a single entity
 })
 

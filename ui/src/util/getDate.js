@@ -1,5 +1,5 @@
 const getDate = dateString => {
-  return dateString.split(' ').splice(0, 3).join(' ')
+  return dateString.split(',')[0]
 }
 
 export default getDate

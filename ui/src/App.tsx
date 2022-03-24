@@ -13,13 +13,11 @@ const App: FC = () => {
     await client.get('/entries').then(res => setEntries(res.data))
   }
   useEffect(() => {
-    if (!entries) {
-      getAllEntries()
-    }
+    getAllEntries()
   }, [entries])
 
   return (
-    <AppContext.Provider value={{ entries, setEntries }}>
+    <AppContext.Provider value={{ entries, setEntries, getAllEntries }}>
       <div className='app'>
         <Home />
       </div>

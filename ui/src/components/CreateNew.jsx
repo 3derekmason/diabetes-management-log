@@ -6,21 +6,25 @@ import '../styles/CreateNew.css'
 import AppContext from '../context'
 
 const CreateNew = ({ details }) => {
+  const { getAllEntries } = useContext(AppContext)
   const [newGlucose, setNewGlucose] = useState('')
   const [newComments, setNewComments] = useState('')
 
-  const handleSubmit = async () => {
+  const handleSubmit = () => {
+    const dateString = new Date()
     const newEntryData = {
-      date: new Date(),
+      date: dateString.toLocaleString(),
       value: newGlucose,
       comments: newComments
     }
     setNewComments('')
     setNewGlucose('')
-    await client
+    client
       .post('/entries', newEntryData)
       .then(res => console.log(res))
       .catch(err => console.log(err))
+    getAllEntries()
+    details.handleCreateClose()
   }
 
   return (

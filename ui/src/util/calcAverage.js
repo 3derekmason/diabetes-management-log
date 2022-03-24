@@ -3,6 +3,6 @@ const calcAverage = entryArray => {
   entryArray.forEach(entry => {
     sum += entry['value']
   })
-  return sum / entryArray.length
+  return Math.floor(sum / entryArray.length)
 }
 export default calcAverage
