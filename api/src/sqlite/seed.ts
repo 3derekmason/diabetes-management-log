@@ -3,7 +3,7 @@ export const entries: Entry[] = [
   {
     id: 1,
     date: 'Wed Mar 23 2022 07:44:40 GMT-0600 (Mountain Daylight Time)',
-    value: 120,
+    value: 188,
     comment: 'Feeling ill'
   },
   {
@@ -27,7 +27,7 @@ export const entries: Entry[] = [
   {
     id: 5,
     date: 'Tue Mar 22 2022 07:29:40 GMT-0600 (Mountain Daylight Time)',
-    value: 103,
+    value: 70,
     comment: 'Before breakfast'
   }
 ]
