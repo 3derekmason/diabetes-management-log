@@ -1,0 +1,10 @@
+.createNew {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.createNewEntry {
+  width: 25vw;
+  height: 75vh;
+}

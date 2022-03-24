@@ -21,7 +21,7 @@ const MainTile = ({ data }) => {
       <Typography element='h5' variant='caption'>
         {getTime(data.entry.date)}
       </Typography>
-      <Button onClick={data.handleOpen} style={{ color: '#84ffff' }}>
+      <Button onClick={data.handleDetailOpen} style={{ color: '#84ffff' }}>
         View
       </Button>
       <Button className='deleteButton' style={{ color: '#880e4f' }}>

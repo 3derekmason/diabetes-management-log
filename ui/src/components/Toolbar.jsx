@@ -6,9 +6,8 @@ import setValueColor from '../util/setValueColor'
 import calcAverage from '../util/calcAverage'
 import AppContext from '../context.js'
 
-const MainToolbar = () => {
+const MainToolbar = ({ data }) => {
   const { entries } = useContext(AppContext)
-  console.log(entries)
   return (
     <Paper elevation={3} style={{ background: '#212121', color: '#fff' }} className='toolbar'>
       <div className='averageGlucose'>
@@ -20,7 +19,9 @@ const MainToolbar = () => {
         </Typography>
       </div>
       <div className='filter'>Sort by:</div>
-      <Button style={{ color: '#84ffff' }}>LOG ENTRY</Button>
+      <Button style={{ color: '#84ffff' }} onClick={data.handleCreateOpen}>
+        LOG ENTRY
+      </Button>
     </Paper>
   )
 }

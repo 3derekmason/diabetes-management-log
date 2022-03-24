@@ -6,15 +6,18 @@ import '../styles/Home.css'
 import MainToolbar from './Toolbar'
 import MainTile from './MainTile'
 import DetailedView from './DetailedView'
+import CreateNew from './CreateNew'
 import AppContext from '../context'
 
 const Home = () => {
   const { entries } = useContext(AppContext)
   // Modal controls
   const [detailOpen, setDetailOpen] = useState(false)
-  const handleOpen = () => setDetailOpen(true)
-  const handleClose = () => setDetailOpen(false)
-
+  const handleDetailOpen = () => setDetailOpen(true)
+  const handleDetailClose = () => setDetailOpen(false)
+  const [createOpen, setCreateOpen] = useState(false)
+  const handleCreateOpen = () => setCreateOpen(true)
+  const handleCreateClose = () => setCreateOpen(false)
   return !entries ? (
     <h1>Loading...</h1>
   ) : (
@@ -30,13 +33,14 @@ const Home = () => {
         </Toolbar>
       </AppBar>
       <Card className='homePage' style={{ background: '#121212' }}>
-        <MainToolbar />
+        <MainToolbar data={{ createOpen, handleCreateClose, handleCreateOpen }} />
         <div className='tileContainer'>
           {entries.map((entry, i) => {
-            return <MainTile data={{ entry, detailOpen, handleOpen, handleClose }} key={i} />
+            return <MainTile data={{ entry, detailOpen, handleDetailOpen, handleDetailClose }} key={i} />
           })}
         </div>
-        <DetailedView details={{ detailOpen, handleClose, handleOpen }} />
+        <DetailedView details={{ detailOpen, handleDetailClose, handleDetailOpen }} />
+        <CreateNew details={{ createOpen, handleCreateClose, handleCreateOpen }} />
       </Card>
     </div>
   )

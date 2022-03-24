@@ -6,7 +6,7 @@ import AppContext from '../context'
 
 const DetailedView = ({ details }) => {
   return (
-    <Modal open={details.detailOpen} onClose={details.handleClose} className='detailModal'>
+    <Modal open={details.detailOpen} onClose={details.handleDetailClose} className='detailModal'>
       <Box className='detailView'>
         <Typography variant='h6' component='h2'>
           Text in a modal
