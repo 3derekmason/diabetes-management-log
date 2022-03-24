@@ -7,9 +7,9 @@ import AppContext from '../context'
 
 const Delete = ({ details }) => {
   const { getAllEntries } = useContext(AppContext)
-  const deleteEntry = async id => {
+  const deleteEntry = async () => {
     await client
-      .delete('/entries', { data: { id } })
+      .delete(`/entries/${details.id}`)
       .then(getAllEntries())
       .catch(err => console.log(err))
     details.handleDeleteClose()

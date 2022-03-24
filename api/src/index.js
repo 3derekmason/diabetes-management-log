@@ -23,12 +23,11 @@ app.get('/entries', async (req, res) => {
 app.post('/entries', async (req, res) => {
   // create a single entity
   const entry = { date: req.body.date, value: req.body.value, comment: req.body.comments }
-  await db('entries')
-    .insert(entry)
-    .then(data => res.status(201).send(data))
+  await db('entries').insert(entry).then(res.status(201))
 })
-app.delete('/entries/:id', (req, res) => {
+app.delete('/entries/:id', async (req, res) => {
   // delete a single entity
+  await db('entries').select('*').where('id', req.params.id).del().then(res.status(201))
 })
 app.get('/entries/:id', (req, res) => {
   // fetch a single entity
