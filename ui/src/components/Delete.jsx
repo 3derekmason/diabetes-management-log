@@ -11,8 +11,8 @@ const Delete = ({ details }) => {
     await client
       .delete(`/entries/${details.id}`)
       .then(getAllEntries())
+      .then(details.handleDeleteClose())
       .catch(err => console.log(err))
-    details.handleDeleteClose()
   }
   return (
     <Modal open={details.deleteOpen} onClose={details.handleDeleteClose} className='detailModal'>

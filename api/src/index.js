@@ -15,9 +15,12 @@ app.get('/', (req, res) => {
 
 app.get('/entries', async (req, res) => {
   // get all entries
-  await db
-    .select('*')
-    .from('entries')
+  // await db
+  //   .select('*')
+  //   .from('entries')
+  //   .then(data => res.json(data))
+  await db('entries')
+    .orderBy('id', 'desc')
     .then(data => res.json(data))
 })
 app.post('/entries', async (req, res) => {
