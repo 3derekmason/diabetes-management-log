@@ -9,6 +9,12 @@
 .detailView {
   width: 50%;
   height: 50%;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 16px;
   background: #eeeeee;
   animation: dropDown 0.5s;
 }
@@ -24,4 +30,18 @@
     scale: (1);
     transform: translateY(0%);
   }
+}
+
+.detailHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.detailRow {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

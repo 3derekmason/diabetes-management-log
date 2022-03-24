@@ -12,7 +12,7 @@ const DetailedView = ({ details }) => {
     <Modal open={details.detailOpen} onClose={details.handleDetailClose} className='detailModal'>
       <Box className='detailView'>
         <div className='detailHeader'>
-          <Typography variant='h6'>Entry from</Typography>
+          <Typography variant='subtitle2'>Entry from: </Typography>
           <Typography variant='h4'>{getDate(details.entry.date)}</Typography>
         </div>
         <div className='detailRow'>
@@ -22,10 +22,16 @@ const DetailedView = ({ details }) => {
           </Typography>
         </div>
         <div className='detailRow'>
+          <Typography variant='caption'>Time logged: </Typography>
+          <Typography variant='subtitle2'>{getTime(details.entry.date)}</Typography>
+        </div>
+        <div className='detailRow'>
           <Typography variant='caption'>Comments: </Typography>
           <Typography variant='subtitle1'>{details.entry.comment}</Typography>
         </div>
-        <Button style={{ color: '#d50000' }}>Close</Button>
+        <Button style={{ color: '#d50000' }} onClick={details.handleDetailClose}>
+          Close
+        </Button>
       </Box>
     </Modal>
   )
