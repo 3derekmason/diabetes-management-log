@@ -22,7 +22,7 @@ const MainTile = ({ data }) => {
         {getTime(data?.entry?.date)}
       </Typography>
       <Button onClick={data.handleDetailOpen}>View</Button>
-      <Button className='deleteButton' style={{ color: '#880e4f' }}>
+      <Button className='deleteButton' onClick={data.handleDeleteOpen} style={{ color: '#880e4f' }}>
         X
       </Button>
     </Card>

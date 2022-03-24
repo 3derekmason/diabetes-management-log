@@ -7,6 +7,7 @@ import MainToolbar from './Toolbar'
 import MainTile from './MainTile'
 import DetailedView from './DetailedView'
 import CreateNew from './CreateNew'
+import Delete from './Delete'
 import AppContext from '../context'
 
 const Home = () => {
@@ -18,6 +19,10 @@ const Home = () => {
   const [createOpen, setCreateOpen] = useState(false)
   const handleCreateOpen = () => setCreateOpen(true)
   const handleCreateClose = () => setCreateOpen(false)
+  const [deleteOpen, setDeleteOpen] = useState(false)
+  const handleDeleteOpen = () => setDeleteOpen(true)
+  const handleDeleteClose = () => setDeleteOpen(false)
+
   return !entries ? (
     <h1>Loading...</h1>
   ) : (
@@ -33,14 +38,15 @@ const Home = () => {
         </Toolbar>
       </AppBar>
       <Card className='homePage' style={{ background: '#121212' }}>
-        <MainToolbar data={{ createOpen, handleCreateClose, handleCreateOpen }} />
+        <MainToolbar data={{ handleCreateOpen }} />
         <div className='tileContainer'>
           {entries.map((entry, i) => {
-            return <MainTile data={{ entry, detailOpen, handleDetailOpen, handleDetailClose }} key={i} />
+            return <MainTile data={{ entry, handleDetailOpen, handleDeleteOpen }} key={i} />
           })}
         </div>
         <DetailedView details={{ detailOpen, handleDetailClose, handleDetailOpen }} />
         <CreateNew details={{ createOpen, handleCreateClose, handleCreateOpen }} />
+        <Delete details={{ deleteOpen, handleDeleteOpen, handleDeleteClose }} />
       </Card>
     </div>
   )
