@@ -9,7 +9,7 @@
 .detailView {
   width: 50%;
   height: 50%;
-  background: #fafafa;
+  background: #eeeeee;
 }
 .detailView:focus {
   outline: none;

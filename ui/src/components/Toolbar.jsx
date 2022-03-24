@@ -6,7 +6,7 @@ import AppContext from '../context.js'
 
 const MainToolbar = () => {
   return (
-    <Paper elevation={3} className='toolbar'>
+    <Paper elevation={3} style={{ background: '#424242' }} className='toolbar'>
       Toolbar
     </Paper>
   )

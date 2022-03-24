@@ -29,7 +29,7 @@ const Home = () => {
           </Typography>
         </Toolbar>
       </AppBar>
-      <Card className='homePage' style={{ background: '#424242' }}>
+      <Card className='homePage' style={{ background: '#212121' }}>
         <MainToolbar />
         <div className='tileContainer'>
           {entries.map((entry, i) => {
