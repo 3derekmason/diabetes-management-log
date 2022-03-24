@@ -22,7 +22,7 @@ const Home = () => {
       <AppBar style={{ background: '#212121', cursor: 'default' }}>
         <Toolbar className='appbar'>
           <Typography element='h6' variant='subtitle2'>
-            Diabetes Management Log
+            <strong>DML</strong> - Diabetes Management Log
           </Typography>
           <Typography element='h6' variant='button' style={{ color: '#616161' }}>
             HOME

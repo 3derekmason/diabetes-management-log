@@ -10,7 +10,7 @@ const MainToolbar = () => {
   const { entries } = useContext(AppContext)
   console.log(entries)
   return (
-    <Paper elevation={3} style={{ background: '#e0e0e0' }} className='toolbar'>
+    <Paper elevation={3} style={{ background: '#616161', color: '#fff' }} className='toolbar'>
       <div className='averageGlucose'>
         <Typography style={{ color: '#212121' }}>Average Glucose: </Typography>
         <Typography variant='h3' style={{ color: setValueColor(calcAverage(entries)) }}>
@@ -18,7 +18,7 @@ const MainToolbar = () => {
         </Typography>
       </div>
       <div className='filter'>Sort by:</div>
-      <Button>LOG ENTRY</Button>
+      <Button style={{ color: '#84ffff' }}>LOG ENTRY</Button>
     </Paper>
   )
 }
