@@ -1,5 +1,5 @@
-import { AppBar, Box, Button, Card, Modal, Toolbar, Typography } from '@mui/material'
-import { useContext, useEffect, useState } from 'react'
+import { Box, Button, Modal, Typography } from '@mui/material'
+import { useContext } from 'react'
 import client from '../client'
 
 import '../styles/DeleteModal.css'
