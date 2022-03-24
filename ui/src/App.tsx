@@ -4,6 +4,7 @@ import './styles/App.css'
 import client from './client'
 
 import AppContext from './context.js'
+import Welcome from './components/Welcome'
 import Home from './components/Home.jsx'
 
 const App: FC = () => {
@@ -37,6 +38,7 @@ const App: FC = () => {
   return (
     <AppContext.Provider value={{ entries, setEntries, getAllEntries, setLowVal, setHighVal }}>
       <div className='app'>
+        <Welcome />
         <Home />
       </div>
     </AppContext.Provider>

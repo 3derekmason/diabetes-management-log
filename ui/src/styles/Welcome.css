@@ -1,0 +1,22 @@
+.welcome {
+  position: absolute;
+  display: flex;
+  width: 75vw;
+  height: 75vh;
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+  animation: hideWelcome 2s;
+}
+
+@keyframes hideWelcome {
+  0% {
+    font-size: 100px;
+    z-index: 10;
+  }
+  100% {
+    font-size: 1px;
+    z-index: -1;
+  }
+}
