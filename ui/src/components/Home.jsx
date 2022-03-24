@@ -41,7 +41,6 @@ const Home = () => {
             return <MainTile data={{ entry, handleDetailOpen }} key={i} />
           })}
         </div>
-        <DetailedView details={{ detailOpen, handleDetailClose, handleDetailOpen }} />
         <CreateNew details={{ createOpen, handleCreateClose, handleCreateOpen }} />
       </Card>
     </div>

@@ -1,6 +1,9 @@
-import { AppBar, Box, Card, Modal, Toolbar, Typography } from '@mui/material'
+import { AppBar, Box, Button, Card, Modal, Toolbar, Typography } from '@mui/material'
 import { useContext, useEffect, useState } from 'react'
 
+import setValueColor from '../util/setValueColor'
+import getDate from '../util/getDate'
+import getTime from '../util/getTime'
 import '../styles/DetailModal.css'
 import AppContext from '../context'
 
@@ -8,10 +11,21 @@ const DetailedView = ({ details }) => {
   return (
     <Modal open={details.detailOpen} onClose={details.handleDetailClose} className='detailModal'>
       <Box className='detailView'>
-        <Typography variant='h6' component='h2'>
-          Text in a modal
-        </Typography>
-        <Typography sx={{ mt: 2 }}>Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</Typography>
+        <div className='detailHeader'>
+          <Typography variant='h6'>Entry from</Typography>
+          <Typography variant='h4'>{getDate(details.entry.date)}</Typography>
+        </div>
+        <div className='detailRow'>
+          <Typography variant='caption'>Blood Sugar: </Typography>
+          <Typography variant='h1' style={{ color: setValueColor(details.entry.value) }}>
+            {details.entry.value}
+          </Typography>
+        </div>
+        <div className='detailRow'>
+          <Typography variant='caption'>Comments: </Typography>
+          <Typography variant='subtitle1'>{details.entry.comment}</Typography>
+        </div>
+        <Button style={{ color: '#d50000' }}>Close</Button>
       </Box>
     </Modal>
   )
