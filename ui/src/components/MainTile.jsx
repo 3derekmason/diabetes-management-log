@@ -1,9 +1,7 @@
-import { Button, Card, Paper, Typography } from '@mui/material'
-import { useContext, useEffect, useState, useRef } from 'react'
+import { Button, Card, Typography } from '@mui/material'
+import { useState } from 'react'
 
 import '../styles/MainTile.css'
-
-import AppContext from '../context.js'
 
 import getDate from '../util/getDate'
 import getTime from '../util/getTime'
@@ -33,7 +31,7 @@ const MainTile = ({ data }) => {
         {getTime(data?.entry?.date)}
       </Typography>
       <Button onClick={handleDetailOpen}>View</Button>
-      <Button className='deleteButton' onClick={handleDeleteOpen} style={{ color: '#880e4f' }}>
+      <Button className='deleteButton' onClick={handleDeleteOpen} size='small' style={{ color: '#d50000' }}>
         X
       </Button>
       <DetailedView details={{ entry: data.entry, detailOpen: detailOpen, handleDetailClose: handleDetailClose }} />
