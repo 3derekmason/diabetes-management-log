@@ -11,7 +11,7 @@ import setValueColor from '../util/setValueColor'
 
 const MainTile = ({ data }) => {
   return (
-    <Card className='mainTile' onClick={data.handleOpen}>
+    <Card className='mainTile' onClick={data.handleOpen} style={{ background: '#eee' }}>
       <h1 style={{ color: setValueColor(data.entry.value) }}>{data.entry.value}</h1>
       <div className='dateTime'>
         <Typography element='h4' variant='subtitle1'>

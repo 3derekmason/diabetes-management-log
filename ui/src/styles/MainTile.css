@@ -9,7 +9,11 @@
   gap: 48px;
   height: 48px;
   width: 85%;
-  background: #616161;
+  transition: 0.5s;
+}
+.mainTile:hover {
+  cursor: pointer;
+  transition: 0.5s;
 }
 
 .dateTime {

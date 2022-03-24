@@ -19,7 +19,7 @@ const Home = () => {
     <h1>Loading...</h1>
   ) : (
     <div className='homeContainer'>
-      <AppBar style={{ background: '#212121' }}>
+      <AppBar style={{ background: '#212121', cursor: 'default' }}>
         <Toolbar className='appbar'>
           <Typography element='h6' variant='subtitle2'>
             Diabetes Management Log
