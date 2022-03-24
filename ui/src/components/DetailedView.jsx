@@ -1,11 +1,9 @@
-import { AppBar, Box, Button, Card, Modal, Toolbar, Typography } from '@mui/material'
-import { useContext, useEffect, useState } from 'react'
+import { Box, Button, Modal, Typography } from '@mui/material'
 
 import setValueColor from '../util/setValueColor'
 import getDate from '../util/getDate'
 import getTime from '../util/getTime'
 import '../styles/DetailModal.css'
-import AppContext from '../context'
 
 const DetailedView = ({ details }) => {
   return (
