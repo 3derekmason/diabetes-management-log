@@ -1,13 +1,11 @@
-import { AppBar, Box, Card, Modal, Toolbar, Typography } from '@mui/material'
-import { useContext, useEffect, useState } from 'react'
+import { AppBar, Card, Toolbar, Typography } from '@mui/material'
+import { useContext, useState } from 'react'
 
 import '../styles/Home.css'
 
 import MainToolbar from './Toolbar'
 import MainTile from './MainTile'
-import DetailedView from './DetailedView'
 import CreateNew from './CreateNew'
-import Delete from './Delete'
 import AppContext from '../context'
 
 const Home = () => {
@@ -18,6 +16,7 @@ const Home = () => {
   const handleCreateClose = () => setCreateOpen(false)
 
   return !entries ? (
+    // in case first fetch takes a while
     <h1>Loading...</h1>
   ) : (
     <div className='homeContainer'>
