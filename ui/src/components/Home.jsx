@@ -19,9 +19,6 @@ const Home = () => {
   const [createOpen, setCreateOpen] = useState(false)
   const handleCreateOpen = () => setCreateOpen(true)
   const handleCreateClose = () => setCreateOpen(false)
-  const [deleteOpen, setDeleteOpen] = useState(false)
-  const handleDeleteOpen = () => setDeleteOpen(true)
-  const handleDeleteClose = () => setDeleteOpen(false)
 
   return !entries ? (
     <h1>Loading...</h1>
@@ -41,12 +38,11 @@ const Home = () => {
         <MainToolbar data={{ handleCreateOpen }} />
         <div className='tileContainer'>
           {entries.map((entry, i) => {
-            return <MainTile data={{ entry, handleDetailOpen, handleDeleteOpen }} key={i} />
+            return <MainTile data={{ entry, handleDetailOpen }} key={i} />
           })}
         </div>
         <DetailedView details={{ detailOpen, handleDetailClose, handleDetailOpen }} />
         <CreateNew details={{ createOpen, handleCreateClose, handleCreateOpen }} />
-        <Delete details={{ deleteOpen, handleDeleteOpen, handleDeleteClose }} />
       </Card>
     </div>
   )

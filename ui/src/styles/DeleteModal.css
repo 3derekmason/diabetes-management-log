@@ -1,0 +1,19 @@
+.deleteView {
+  box-sizing: border-box;
+  padding: 8px;
+  width: 33vw;
+  height: 20vh;
+  background: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.deleteButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}

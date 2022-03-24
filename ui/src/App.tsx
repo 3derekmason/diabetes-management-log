@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react'
+import { FC, useEffect, useState, useRef } from 'react'
 
 import './styles/App.css'
 import client from './client'
@@ -8,6 +8,7 @@ import Home from './components/Home.jsx'
 
 const App: FC = () => {
   const [entries, setEntries] = useState()
+  let idPlaceHolder = useRef()
 
   const getAllEntries = async () => {
     await client.get('/entries').then(res => setEntries(res.data))
@@ -17,7 +18,7 @@ const App: FC = () => {
   }, [entries])
 
   return (
-    <AppContext.Provider value={{ entries, setEntries, getAllEntries }}>
+    <AppContext.Provider value={{ entries, setEntries, getAllEntries, idPlaceHolder }}>
       <div className='app'>
         <Home />
       </div>
