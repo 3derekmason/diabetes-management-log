@@ -1,15 +1,15 @@
 import { Entry } from '../interfaces'
 export const entries: Entry[] = [
   {
-    id: 1,
+    id: 5,
     date: '3/24/2022, 1:22:19 AM',
-    value: 188,
-    comment: 'Feeling ill'
+    value: 300,
+    comment: 'Feeling very ill'
   },
   {
-    id: 2,
+    id: 4,
     date: '3/24/2022, 5:12:19 AM',
-    value: 85,
+    value: 70,
     comment: 'Fasting'
   },
   {
@@ -19,15 +19,15 @@ export const entries: Entry[] = [
     comment: 'After exercise'
   },
   {
-    id: 4,
+    id: 2,
     date: '3/22/2022, 9:27:19 AM',
-    value: 125,
+    value: 150,
     comment: 'After breakfast'
   },
   {
-    id: 5,
+    id: 1,
     date: '3/22/2022, 6:22:19 AM',
-    value: 70,
+    value: 85,
     comment: 'Before breakfast'
   }
 ]
