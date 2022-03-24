@@ -8,9 +8,11 @@ import Home from './components/Home.jsx'
 
 const App: FC = () => {
   const [entries, setEntries] = useState()
+  // boolean to toggle order of results
   const [lowVal, setLowVal] = useState(false)
   const [highVal, setHighVal] = useState(false)
 
+  // get all functions
   const getAllEntries = async () => {
     await client.get('/entries').then(res => setEntries(res.data))
   }
@@ -21,6 +23,7 @@ const App: FC = () => {
     await client.get('/asc').then(res => setEntries(res.data))
   }
 
+  // conditionaly grab all entries
   useEffect(() => {
     if (lowVal) {
       getLowToHigh()
@@ -29,7 +32,7 @@ const App: FC = () => {
     } else {
       getAllEntries()
     }
-  }, [entries])
+  }, [entries, lowVal, highVal])
 
   return (
     <AppContext.Provider value={{ entries, setEntries, getAllEntries, setLowVal, setHighVal }}>

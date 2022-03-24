@@ -1,3 +1,5 @@
+//Format time from db result
+
 const getTime = timeString => {
   const time = timeString.split(',')[1]
   const timeSegments = time.split(':')
