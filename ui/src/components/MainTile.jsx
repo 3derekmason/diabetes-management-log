@@ -1,4 +1,4 @@
-import { Button, Card, IconButton, Typography } from '@mui/material'
+import { Button, Card, Typography } from '@mui/material'
 import { useState } from 'react'
 
 import '../styles/MainTile.css'
