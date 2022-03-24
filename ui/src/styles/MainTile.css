@@ -4,22 +4,10 @@
 
 .mainTile {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 48px;
+  gap: 40px;
   height: 48px;
-  width: 85%;
+  width: 75%;
   transition: 0.5s;
-}
-.mainTile:hover {
-  cursor: pointer;
-  transition: 0.5s;
-}
-
-.dateTime {
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
 }

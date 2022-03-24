@@ -12,7 +12,7 @@ const MainToolbar = () => {
   return (
     <Paper elevation={3} style={{ background: '#e0e0e0' }} className='toolbar'>
       <div className='averageGlucose'>
-        <Typography style={{ color: '#fff' }}>Average Glucose: </Typography>
+        <Typography style={{ color: '#212121' }}>Average Glucose: </Typography>
         <Typography variant='h3' style={{ color: setValueColor(calcAverage(entries)) }}>
           {calcAverage(entries)}
         </Typography>
