@@ -13,6 +13,15 @@
   align-items: center;
   gap: 24px;
   flex-direction: column;
+  animation: slideUp 0.5s;
+}
+@keyframes slideUp {
+  0% {
+    transform: translateY(250%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
 }
 
 .formRow {

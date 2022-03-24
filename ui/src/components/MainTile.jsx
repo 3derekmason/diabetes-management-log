@@ -22,7 +22,7 @@ const MainTile = ({ data }) => {
   const handleDetailClose = () => setDetailOpen(false)
 
   return (
-    <Card className='mainTile' style={{ background: '#212121', color: '#Fff' }} onClick={() => console.log(data)}>
+    <Card className='mainTile' style={{ background: '#212121', color: '#Fff' }}>
       <Typography element='h4' variant='subtitle1' style={{ marginLeft: '24px' }}>
         {getDate(data?.entry?.date)}
       </Typography>
