@@ -10,7 +10,18 @@
   width: 50%;
   height: 50%;
   background: #eeeeee;
+  animation: dropDown 0.5s;
 }
 .detailView:focus {
   outline: none;
+}
+@keyframes dropDown {
+  0% {
+    scale: (0.25);
+    transform: translateY(-250%);
+  }
+  100% {
+    scale: (1);
+    transform: translateY(0%);
+  }
 }
