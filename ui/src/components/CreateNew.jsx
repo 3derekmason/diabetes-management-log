@@ -1,5 +1,5 @@
-import { AppBar, Box, Button, Card, Modal, Paper, TextField, Toolbar, Typography } from '@mui/material'
-import { useContext, useEffect, useState } from 'react'
+import { Button, Card, Modal, TextField, Typography } from '@mui/material'
+import { useContext, useState } from 'react'
 import client from '../client'
 
 import '../styles/CreateNew.css'
@@ -7,6 +7,8 @@ import AppContext from '../context'
 
 const CreateNew = ({ details }) => {
   const { getAllEntries } = useContext(AppContext)
+
+  // Blank form values
   const [newGlucose, setNewGlucose] = useState('')
   const [newComments, setNewComments] = useState('')
 
@@ -17,6 +19,7 @@ const CreateNew = ({ details }) => {
       value: newGlucose,
       comments: newComments
     }
+    //clear form and close after posting
     setNewComments('')
     setNewGlucose('')
     client
