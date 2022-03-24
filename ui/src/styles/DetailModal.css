@@ -1,0 +1,16 @@
+.detailModal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.detailView {
+  width: 50%;
+  height: 50%;
+  background: #fafafa;
+}
+.detailView:focus {
+  outline: none;
+}

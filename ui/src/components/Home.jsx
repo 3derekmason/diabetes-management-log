@@ -5,6 +5,7 @@ import '../styles/Home.css'
 
 import MainToolbar from './Toolbar'
 import MainTile from './MainTile'
+import DetailedView from './DetailedView'
 import AppContext from '../context'
 
 const Home = () => {
@@ -17,7 +18,7 @@ const Home = () => {
   return !entries ? (
     <h1>Loading...</h1>
   ) : (
-    <div>
+    <div className='homeContainer'>
       <AppBar style={{ background: '#212121' }}>
         <Toolbar className='appbar'>
           <Typography element='h6' variant='subtitle2'>
@@ -32,25 +33,11 @@ const Home = () => {
         <MainToolbar />
         <div className='tileContainer'>
           {entries.map((entry, i) => {
-            return <MainTile data={entry} key={i} details={{ detailOpen, handleOpen, handleClose }} />
+            return <MainTile data={{ entry, detailOpen, handleOpen, handleClose }} key={i} />
           })}
         </div>
+        <DetailedView details={{ detailOpen, handleClose, handleOpen }} />
       </Card>
-      <Modal
-        open={detailOpen}
-        onClose={handleClose}
-        aria-labelledby='modal-modal-title'
-        aria-describedby='modal-modal-description'
-      >
-        <Box>
-          <Typography id='modal-modal-title' variant='h6' component='h2'>
-            Text in a modal
-          </Typography>
-          <Typography id='modal-modal-description' sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-          </Typography>
-        </Box>
-      </Modal>
     </div>
   )
 }
