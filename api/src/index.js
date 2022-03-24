@@ -22,7 +22,9 @@ app.post('/entries', async (req, res) => {
 })
 app.delete('/entries/:id', async (req, res) => {
   // delete a single entry
-  await db('entries').select('*').where('id', req.params.id).del().then(res.status(201))
+  const res = await db('entries').select('*').where('id', req.params.id).del()
+  res.status(200)
+  console.log('Entry removed...')
 })
 
 app.get('/desc', async (req, res) => {
