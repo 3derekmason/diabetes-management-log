@@ -8,17 +8,31 @@ import Home from './components/Home.jsx'
 
 const App: FC = () => {
   const [entries, setEntries] = useState()
-  let idPlaceHolder = useRef()
+  const [lowVal, setLowVal] = useState(false)
+  const [highVal, setHighVal] = useState(false)
 
   const getAllEntries = async () => {
     await client.get('/entries').then(res => setEntries(res.data))
   }
+  const getHighToLow = async () => {
+    await client.get('/desc').then(res => setEntries(res.data))
+  }
+  const getLowToHigh = async () => {
+    await client.get('/asc').then(res => setEntries(res.data))
+  }
+
   useEffect(() => {
-    getAllEntries()
+    if (lowVal) {
+      getLowToHigh()
+    } else if (highVal) {
+      getHighToLow()
+    } else {
+      getAllEntries()
+    }
   }, [entries])
 
   return (
-    <AppContext.Provider value={{ entries, setEntries, getAllEntries, idPlaceHolder }}>
+    <AppContext.Provider value={{ entries, setEntries, getAllEntries, setLowVal, setHighVal }}>
       <div className='app'>
         <Home />
       </div>

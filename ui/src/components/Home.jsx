@@ -13,9 +13,6 @@ import AppContext from '../context'
 const Home = () => {
   const { entries } = useContext(AppContext)
   // Modal controls
-  const [detailOpen, setDetailOpen] = useState(false)
-  const handleDetailOpen = () => setDetailOpen(true)
-  const handleDetailClose = () => setDetailOpen(false)
   const [createOpen, setCreateOpen] = useState(false)
   const handleCreateOpen = () => setCreateOpen(true)
   const handleCreateClose = () => setCreateOpen(false)
@@ -38,7 +35,7 @@ const Home = () => {
         <MainToolbar data={{ handleCreateOpen }} />
         <div className='tileContainer'>
           {entries.map((entry, i) => {
-            return <MainTile data={{ entry, handleDetailOpen }} key={i} />
+            return <MainTile data={{ entry }} key={i} />
           })}
         </div>
         <CreateNew details={{ createOpen, handleCreateClose, handleCreateOpen }} />

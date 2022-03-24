@@ -7,7 +7,8 @@ import calcAverage from '../util/calcAverage'
 import AppContext from '../context.js'
 
 const MainToolbar = ({ data }) => {
-  const { entries, getAllEntries } = useContext(AppContext)
+  const { entries, getAllEntries, setLowVal, setHighVal } = useContext(AppContext)
+
   return (
     <Paper elevation={3} style={{ background: '#212121', color: '#fff' }} className='toolbar'>
       <div className='averageGlucose'>
@@ -20,13 +21,34 @@ const MainToolbar = ({ data }) => {
       </div>
       <div className='filter'>
         <Typography>Order by: </Typography>
-        <Button variant='outlined' size='small'>
+        <Button
+          variant='outlined'
+          size='small'
+          onClick={() => {
+            setHighVal(false)
+            setLowVal(true)
+          }}
+        >
           Low to High
         </Button>
-        <Button variant='outlined' size='small' onClick={getAllEntries}>
+        <Button
+          variant='outlined'
+          size='small'
+          onClick={() => {
+            setLowVal(false)
+            setHighVal(false)
+          }}
+        >
           Date
         </Button>
-        <Button variant='outlined' size='small'>
+        <Button
+          variant='outlined'
+          size='small'
+          onClick={() => {
+            setLowVal(false)
+            setHighVal(true)
+          }}
+        >
           High to Low
         </Button>
       </div>

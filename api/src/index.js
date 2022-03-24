@@ -9,10 +9,6 @@ app.use(cors())
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
-app.get('/', (req, res) => {
-  res.send({ data: 12345 })
-})
-
 app.get('/entries', async (req, res) => {
   // get all entries
   // await db
@@ -32,8 +28,19 @@ app.delete('/entries/:id', async (req, res) => {
   // delete a single entity
   await db('entries').select('*').where('id', req.params.id).del().then(res.status(201))
 })
-app.get('/entries/:id', (req, res) => {
-  // fetch a single entity
+
+app.get('/desc', async (req, res) => {
+  // grab all entries and order by descending value
+  await db('entries')
+    .orderBy('value', 'desc')
+    .then(data => res.json(data))
+})
+
+app.get('/asc', async (req, res) => {
+  // grab all entries and order by ascending value
+  await db('entries')
+    .orderBy('value', 'asc')
+    .then(data => res.json(data))
 })
 
 app.listen(5010, async () => {
