@@ -1,6 +1,6 @@
-# DML Challange - Derek Mason
+# DML Challange - **Diabetes Management Log**
 
-## Diabetes Management Log
+## by Derek Mason
 
 ---
 
