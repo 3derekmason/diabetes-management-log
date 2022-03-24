@@ -10,9 +10,11 @@ const MainToolbar = () => {
   const { entries } = useContext(AppContext)
   console.log(entries)
   return (
-    <Paper elevation={3} style={{ background: '#616161', color: '#fff' }} className='toolbar'>
+    <Paper elevation={3} style={{ background: '#212121', color: '#fff' }} className='toolbar'>
       <div className='averageGlucose'>
-        <Typography style={{ color: '#212121' }}>Average Glucose: </Typography>
+        <Typography variant='caption' style={{ color: '#fff' }}>
+          Average Glucose:{' '}
+        </Typography>
         <Typography variant='h3' style={{ color: setValueColor(calcAverage(entries)) }}>
           {calcAverage(entries)}
         </Typography>

@@ -11,7 +11,7 @@ import setValueColor from '../util/setValueColor'
 
 const MainTile = ({ data }) => {
   return (
-    <Card className='mainTile' style={{ background: '#616161', color: '#Fff' }}>
+    <Card className='mainTile' style={{ background: '#212121', color: '#Fff' }}>
       <Typography element='h4' variant='subtitle1' style={{ marginLeft: '24px' }}>
         {getDate(data.entry.date)}
       </Typography>
