@@ -24,7 +24,7 @@ const Home = () => {
     <div className='homeContainer'>
       <AppBar style={{ background: '#212121', cursor: 'default' }}>
         <Toolbar className='appbar'>
-          <Typography element='h6' variant='subtitle2'>
+          <Typography element='h6' variant='subtitle2' style={{ color: '#fff' }}>
             <strong>DML</strong> - Diabetes Management Log
           </Typography>
           <Typography element='h6' variant='button' style={{ color: '#616161' }}>
