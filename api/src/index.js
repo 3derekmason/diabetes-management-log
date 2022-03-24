@@ -11,21 +11,17 @@ app.use(express.json())
 
 app.get('/entries', async (req, res) => {
   // get all entries
-  // await db
-  //   .select('*')
-  //   .from('entries')
-  //   .then(data => res.json(data))
   await db('entries')
     .orderBy('id', 'desc')
     .then(data => res.json(data))
 })
 app.post('/entries', async (req, res) => {
-  // create a single entity
+  // create a single entry
   const entry = { date: req.body.date, value: req.body.value, comment: req.body.comments }
   await db('entries').insert(entry).then(res.status(201))
 })
 app.delete('/entries/:id', async (req, res) => {
-  // delete a single entity
+  // delete a single entry
   await db('entries').select('*').where('id', req.params.id).del().then(res.status(201))
 })
 
