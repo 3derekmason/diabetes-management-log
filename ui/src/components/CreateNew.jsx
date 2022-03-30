@@ -36,25 +36,23 @@ const CreateNew = ({ details }) => {
         <Typography variant='h6' style={{ color: '#212121' }}>
           What is your blood sugar?
         </Typography>
-        <div className='formRow'>
-          <Typography variant='subtitle2'>Current glucose level: </Typography>
-          <TextField
-            type='number'
-            required
-            autoFocus
-            InputLabelProps={{
-              shrink: true
-            }}
-            size='small'
-            variant='filled'
-            style={{ width: '80px' }}
-            value={newGlucose}
-            onChange={e => {
-              e.preventDefault()
-              setNewGlucose(e.target.value)
-            }}
-          />
-        </div>
+        <Typography variant='subtitle2'>Current glucose level: </Typography>
+        <TextField
+          type='number'
+          required
+          autoFocus
+          variant='standard'
+          InputLabelProps={{
+            shrink: true
+          }}
+          size='small'
+          style={{ width: '95%' }}
+          value={newGlucose}
+          onChange={e => {
+            e.preventDefault()
+            setNewGlucose(e.target.value)
+          }}
+        />
         <Typography>Comments: </Typography>
         <TextField
           placeholder='Ex: After meal'
