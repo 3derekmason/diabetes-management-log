@@ -20,7 +20,7 @@ const MainToolbar = ({ data }) => {
         </Typography>
       </div>
       <div className='filter'>
-        <Typography>Order by: </Typography>
+        <Typography variant='body2'>Order by: </Typography>
         <Button
           variant='outlined'
           size='small'
