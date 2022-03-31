@@ -7,17 +7,14 @@ import getDate from '../util/getDate'
 import getTime from '../util/getTime'
 
 const EditEntry = ({ util }) => {
-  const [newGlucose, setNewGlucose] = useState(util.entry.value)
-  const [newComments, setNewComments] = useState(util.entry.comment)
+  const [newGlucose, setNewGlucose] = useState(util.entry?.value)
+  const [newComments, setNewComments] = useState(util.entry?.comment)
 
   const handleUpdate = () => {
     const newEntryData = {
       value: newGlucose,
       comments: newComments
     }
-    //clear form and close after posting
-    setNewComments('')
-    setNewGlucose('')
     client
       .put(`/entries/${util.entry.id}`, newEntryData)
       .then(res => console.log(res))
@@ -32,18 +29,20 @@ const EditEntry = ({ util }) => {
           <Typography variant='body2'>{getTime(util.entry.date)}</Typography>
         </div>
         <Card className='editRow' style={{ background: '#e0e0e0' }}>
-          <Typography variant='caption'>Edit blood sugar: </Typography>
+          <Typography variant='h6'>Edit blood sugar: </Typography>
           <TextField
             autoFocus
             value={newGlucose}
             onChange={e => {
               e.preventDefault()
-              setNewGlucose(e.target.value)
+              if (e.target.value !== '') {
+                setNewGlucose(e.target.value)
+              }
             }}
           ></TextField>
         </Card>
         <Card className='editRow' style={{ background: '#e0e0e0' }}>
-          <Typography variant='caption'>Edit comment: </Typography>
+          <Typography variant='h6'>Edit comment: </Typography>
           <TextField
             autoFocus
             multiline
