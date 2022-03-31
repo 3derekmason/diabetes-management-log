@@ -13,11 +13,12 @@ const App: FC = () => {
   const [lowVal, setLowVal] = useState(false)
   const [highVal, setHighVal] = useState(false)
 
-  // get all functions
+  // set current entries
   const getAllEntries = async () => {
     const res = await client.get('/entries')
     setEntries(res.data)
   }
+  // reorder current entries
   const getHighToLow = async () => {
     const res = await client.get('/desc')
     setEntries(res.data)
@@ -29,13 +30,7 @@ const App: FC = () => {
 
   // conditionaly grab all entries
   useEffect(() => {
-    if (lowVal) {
-      getLowToHigh()
-    } else if (highVal) {
-      getHighToLow()
-    } else {
-      getAllEntries()
-    }
+    lowVal ? getLowToHigh() : highVal ? getHighToLow() : getAllEntries()
   }, [entries, lowVal, highVal])
 
   return (
