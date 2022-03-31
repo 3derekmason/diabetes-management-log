@@ -26,6 +26,7 @@ const CreateNew = ({ details }) => {
       .post('/entries', newEntryData)
       .then(res => console.log(res))
       .catch(err => console.log(err))
+    // reorder by most recent if not
     getAllEntries()
     details.handleCreateClose()
   }
@@ -42,9 +43,6 @@ const CreateNew = ({ details }) => {
           required
           autoFocus
           variant='standard'
-          InputLabelProps={{
-            shrink: true
-          }}
           size='small'
           style={{ width: '95%' }}
           value={newGlucose}
