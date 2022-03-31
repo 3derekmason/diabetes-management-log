@@ -13,3 +13,7 @@ test('Returns 0 if inproper input type', () => {
 test('Returns 0 if objects do not contian a value property', () => {
   expect(calcAverage([{ key: 1 }, { key: 2 }, { key: 3 }])).toBe(0)
 })
+
+test('Returns 0 if array is empty or input is not an array', () => {
+  expect(calcAverage([])).toBe(0)
+})
