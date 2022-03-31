@@ -15,7 +15,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 16px;
+  gap: 32px;
   background: #eeeeee;
   animation: slideRight 0.25s;
 }
@@ -31,4 +31,21 @@
     scale: (1);
     transform: translateX(0%);
   }
+}
+
+.editHeader {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  align-items: center;
+  flex-direction: column;
+  color: #37474f;
+}
+
+.editRow {
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }

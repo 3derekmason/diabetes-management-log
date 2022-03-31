@@ -10,8 +10,7 @@ const EditEntry = ({ util }) => {
     <Modal open={util.editOpen} onClose={util.handleEditClose} className='editModal'>
       <Box className='editBox'>
         <div className='editHeader'>
-          <Typography variant='subtitle2'>Entry from: </Typography>
-          <Typography variant='h5'>{getDate(util.entry.date)}</Typography>
+          <Typography variant='h4'>{getDate(util.entry.date)}</Typography>
           <Typography variant='body2'>{getTime(util.entry.date)}</Typography>
         </div>
         <div className='editRow'>
@@ -19,7 +18,7 @@ const EditEntry = ({ util }) => {
           <TextField placeholder={util.entry.value}></TextField>
         </div>
         <div className='editRow'>
-          <Typography variant='caption'>Edit comments: </Typography>
+          <Typography variant='caption'>Edit comment: </Typography>
           <TextField placeholder={util.entry.comment}></TextField>
         </div>
         <Button style={{ color: '#37474f' }}>Update Entry</Button>
