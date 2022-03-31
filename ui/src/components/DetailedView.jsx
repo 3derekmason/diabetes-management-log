@@ -1,6 +1,7 @@
 import { Box, Button, Modal, Typography } from '@mui/material'
 
 import setValueColor from '../util/setValueColor'
+import setRangeValue from '../util/setRangeValue'
 import getDate from '../util/getDate'
 import getTime from '../util/getTime'
 import '../styles/DetailModal.css'
@@ -17,6 +18,12 @@ const DetailedView = ({ details }) => {
           <Typography variant='caption'>Blood Sugar: </Typography>
           <Typography variant='h1' style={{ color: setValueColor(details.entry.value) }}>
             {details.entry.value}
+          </Typography>
+        </div>
+        <div className='detailRow'>
+          <Typography variant='caption'>Range:</Typography>
+          <Typography variant='caption' style={{ color: setValueColor(details.entry.value) }}>
+            {setRangeValue(details.entry?.value)}
           </Typography>
         </div>
         <div className='detailRow'>
