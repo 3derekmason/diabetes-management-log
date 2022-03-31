@@ -13,7 +13,7 @@
   align-items: center;
   gap: 24px;
   flex-direction: column;
-  animation: slideUp 0.5s;
+  animation: slideUp 0.33s;
 }
 @keyframes slideUp {
   0% {

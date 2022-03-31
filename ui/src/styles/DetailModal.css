@@ -17,7 +17,7 @@
   flex-direction: column;
   gap: 16px;
   background: #eeeeee;
-  animation: dropDown 0.5s;
+  animation: dropDown 0.33s;
 }
 .detailView:focus {
   outline: none;

@@ -8,9 +8,9 @@
 
 .editBox {
   box-sizing: border-box;
-  width: 50%;
-  height: 66%;
-  border-radius: 8px;
+  width: 45%;
+  height: 60%;
+  border-radius: 4px;
   display: flex;
   justify-content: center;
   align-items: center;
