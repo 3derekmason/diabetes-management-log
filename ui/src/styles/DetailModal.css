@@ -16,7 +16,8 @@
   align-items: center;
   flex-direction: column;
   gap: 16px;
-  background: #eeeeee;
+  background: #212121;
+  color: #fff;
   animation: dropDown 0.33s;
 }
 .detailView:focus {
