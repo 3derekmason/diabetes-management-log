@@ -10,4 +10,4 @@ const getTime = timeString => {
   return hour + ':' + min + ' ' + ampm
 }
 
-export default getTime
+module.exports = getTime

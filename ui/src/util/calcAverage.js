@@ -7,4 +7,4 @@ const calcAverage = entryArray => {
   })
   return Math.floor(sum / entryArray.length)
 }
-export default calcAverage
+module.exports = calcAverage
