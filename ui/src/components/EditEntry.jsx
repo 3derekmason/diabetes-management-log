@@ -28,7 +28,7 @@ const EditEntry = ({ util }) => {
           <Typography variant='h4'>{getDate(util.entry.date)}</Typography>
           <Typography variant='body2'>{getTime(util.entry.date)}</Typography>
         </div>
-        <Card className='editRow' style={{ background: '#e0e0e0' }}>
+        <Card className='editRow' style={{ background: '#e0f7fa' }}>
           <Typography variant='h6'>Edit blood sugar: </Typography>
           <TextField
             autoFocus
@@ -41,7 +41,7 @@ const EditEntry = ({ util }) => {
             }}
           ></TextField>
         </Card>
-        <Card className='editRow' style={{ background: '#e0e0e0' }}>
+        <Card className='editRow' style={{ background: '#e0f7fa' }}>
           <Typography variant='h6'>Edit comment: </Typography>
           <TextField
             autoFocus

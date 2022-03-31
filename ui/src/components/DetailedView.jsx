@@ -23,7 +23,7 @@ const DetailedView = ({ details }) => {
             <Typography variant='h5'>{getDate(details.entry.date)}</Typography>
           </div>
           <div>
-            <Button size='small' style={{ color: '#546E7A' }} onClick={handleEditOpen}>
+            <Button size='small' style={{ color: '#84ffff' }} onClick={handleEditOpen}>
               Edit
             </Button>
           </div>
