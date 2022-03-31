@@ -7,8 +7,9 @@
 }
 
 .detailView {
+  box-sizing: border-box;
   width: 50%;
-  height: 50%;
+  height: 66%;
   border-radius: 8px;
   display: flex;
   justify-content: center;

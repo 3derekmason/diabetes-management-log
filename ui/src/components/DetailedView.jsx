@@ -12,7 +12,12 @@ const DetailedView = ({ details }) => {
       <Box className='detailView'>
         <div className='detailHeader'>
           <Typography variant='subtitle2'>Entry from: </Typography>
-          <Typography variant='h4'>{getDate(details.entry.date)}</Typography>
+          <Typography variant='h5'>{getDate(details.entry.date)}</Typography>
+        </div>
+        <div>
+          <Button size='small' style={{ color: '#546E7A' }}>
+            Edit
+          </Button>
         </div>
         <div className='detailRow'>
           <Typography variant='caption'>Blood Sugar: </Typography>
