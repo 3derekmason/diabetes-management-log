@@ -1,11 +1,29 @@
-import { Box, Button, Modal, TextField, Typography } from '@mui/material'
+import { Box, Button, Card, Modal, TextField, Typography } from '@mui/material'
+import { useState } from 'react'
+import client from '../client'
 
 import '../styles/EditEntry.css'
 import getDate from '../util/getDate'
 import getTime from '../util/getTime'
-import setValueColor from '../util/setValueColor'
 
 const EditEntry = ({ util }) => {
+  const [newGlucose, setNewGlucose] = useState(util.entry.value)
+  const [newComments, setNewComments] = useState(util.entry.comment)
+
+  const handleUpdate = () => {
+    const newEntryData = {
+      value: newGlucose,
+      comments: newComments
+    }
+    //clear form and close after posting
+    setNewComments('')
+    setNewGlucose('')
+    client
+      .put(`/entries/${util.entry.id}`, newEntryData)
+      .then(res => console.log(res))
+      .catch(err => console.log(err))
+    util.handleEditClose()
+  }
   return (
     <Modal open={util.editOpen} onClose={util.handleEditClose} className='editModal'>
       <Box className='editBox'>
@@ -13,15 +31,30 @@ const EditEntry = ({ util }) => {
           <Typography variant='h4'>{getDate(util.entry.date)}</Typography>
           <Typography variant='body2'>{getTime(util.entry.date)}</Typography>
         </div>
-        <div className='editRow'>
+        <Card className='editRow' style={{ background: '#e0e0e0' }}>
           <Typography variant='caption'>Edit blood sugar: </Typography>
-          <TextField placeholder={util.entry.value}></TextField>
-        </div>
-        <div className='editRow'>
+          <TextField
+            autoFocus
+            value={newGlucose}
+            onChange={e => {
+              e.preventDefault()
+              setNewGlucose(e.target.value)
+            }}
+          ></TextField>
+        </Card>
+        <Card className='editRow' style={{ background: '#e0e0e0' }}>
           <Typography variant='caption'>Edit comment: </Typography>
-          <TextField placeholder={util.entry.comment}></TextField>
-        </div>
-        <Button style={{ color: '#37474f' }}>Update Entry</Button>
+          <TextField
+            autoFocus
+            multiline
+            value={newComments}
+            onChange={e => {
+              e.preventDefault()
+              setNewComments(e.target.value)
+            }}
+          ></TextField>
+        </Card>
+        <Button onClick={handleUpdate}>Update Entry</Button>
       </Box>
     </Modal>
   )

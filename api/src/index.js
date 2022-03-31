@@ -26,6 +26,13 @@ app.delete('/entries/:id', async (req, res) => {
   res.status(200)
   console.log('Entry removed...')
 })
+app.put('/entries/:id', async (req, res) => {
+  const res = await db('entries')
+    .update('value', req.body.value)
+    .where('id', req.params.id)
+    .update('comment', req.body.comments)
+    .where('id', req.params.id)
+})
 
 app.get('/desc', async (req, res) => {
   // grab all entries and order by descending value
