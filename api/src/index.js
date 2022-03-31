@@ -11,14 +11,14 @@ app.use(express.json())
 
 app.get('/entries', async (req, res) => {
   // get all entries
-  await db('entries')
-    .orderBy('id', 'desc')
-    .then(data => res.json(data))
+  const res = await db('entries').orderBy('id', 'desc')
+  res.json(data)
 })
 app.post('/entries', async (req, res) => {
   // create a single entry
   const entry = { date: req.body.date, value: req.body.value, comment: req.body.comments }
-  await db('entries').insert(entry).then(res.status(201))
+  const res = await db('entries').insert(entry)
+  res.status(201)
 })
 app.delete('/entries/:id', async (req, res) => {
   // delete a single entry
@@ -27,6 +27,7 @@ app.delete('/entries/:id', async (req, res) => {
   console.log('Entry removed...')
 })
 app.put('/entries/:id', async (req, res) => {
+  // update a single entry
   const res = await db('entries')
     .update('value', req.body.value)
     .where('id', req.params.id)
@@ -36,16 +37,14 @@ app.put('/entries/:id', async (req, res) => {
 
 app.get('/desc', async (req, res) => {
   // grab all entries and order by descending value
-  await db('entries')
-    .orderBy('value', 'desc')
-    .then(data => res.json(data))
+  const res = await db('entries').orderBy('value', 'desc')
+  res.json(data)
 })
 
 app.get('/asc', async (req, res) => {
   // grab all entries and order by ascending value
-  await db('entries')
-    .orderBy('value', 'asc')
-    .then(data => res.json(data))
+  const res = await db('entries').orderBy('value', 'asc')
+  res.json(data)
 })
 
 app.listen(5010, async () => {
