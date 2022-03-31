@@ -52,7 +52,7 @@ const DetailedView = ({ details }) => {
           </Button>
         </Box>
       </Modal>
-      <EditEntry util={{ editOpen, handleEditOpen, handleEditClose }} />
+      <EditEntry util={{ editOpen: editOpen, handleEditClose: handleEditClose, entry: details.entry }} />
     </div>
   )
 }
