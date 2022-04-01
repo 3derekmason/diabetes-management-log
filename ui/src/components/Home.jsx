@@ -34,7 +34,7 @@ const Home = () => {
         <MainToolbar data={{ handleCreateOpen }} />
         <div className='tileContainer'>
           {entries.map((entry, i) => {
-            return <MainTile data={{ entry }} key={i} />
+            return <MainTile entry={entry} key={i} />
           })}
         </div>
         <CreateNew details={{ createOpen, handleCreateClose, handleCreateOpen }} />
