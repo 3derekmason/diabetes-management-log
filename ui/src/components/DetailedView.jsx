@@ -65,7 +65,7 @@ const DetailedView = ({ details }) => {
           </Button>
         </Box>
       </Modal>
-      <EditEntry data={{ entry: details.entry, state: state }} handleEditClose={() => dispatch({ type: 'close' })} />
+      <EditEntry entry={details.entry} state={state} handleEditClose={() => dispatch({ type: 'close' })} />
     </>
   )
 }
