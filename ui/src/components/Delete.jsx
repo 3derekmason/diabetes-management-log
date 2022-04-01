@@ -5,21 +5,21 @@ import client from '../client'
 import '../styles/DeleteModal.css'
 import AppContext from '../context'
 
-const Delete = ({ details }) => {
+const Delete = ({ deleteOpen, handleDeleteClose, id }) => {
   const { getAllEntries } = useContext(AppContext)
   const deleteEntry = async () => {
     await client
-      .delete(`/entries/${details.id}`)
+      .delete(`/entries/${id}`)
       .then(getAllEntries())
-      .then(details.handleDeleteClose())
+      .then(handleDeleteClose())
       .catch(err => console.log(err))
   }
   return (
-    <Modal open={details.deleteOpen} onClose={details.handleDeleteClose} className='detailModal'>
+    <Modal open={deleteOpen} onClose={handleDeleteClose} className='detailModal'>
       <Box className='deleteView'>
         <Typography variant='h5'>Delete this entry?</Typography>
         <div className='deleteButtons'>
-          <Button variant='filled' style={{ color: '#121212' }} onClick={details.handleDeleteClose}>
+          <Button variant='filled' style={{ color: '#121212' }} onClick={handleDeleteClose}>
             No
           </Button>
           <Button variant='filled' style={{ color: '#D50000' }} onClick={deleteEntry}>

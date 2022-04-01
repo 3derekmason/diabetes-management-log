@@ -42,7 +42,7 @@ const MainTile = ({ data }) => {
         handleDetailClose={handleDetailClose}
         fontColor={fontColor}
       />
-      <Delete details={{ deleteOpen, handleDeleteClose, id: data.entry.id }} />
+      <Delete deleteOpen={deleteOpen} handleDeleteClose={handleDeleteClose} id={data.entry.id} />
     </Card>
   )
 }
