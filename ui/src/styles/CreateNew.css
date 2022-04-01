@@ -6,14 +6,14 @@
 
 .createNewEntry {
   padding: 24px;
-  width: 25vw;
+  width: 20vw;
   height: fit-content;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 24px;
   flex-direction: column;
-  animation: slideUp 0.5s;
+  animation: slideUp 0.33s;
 }
 @keyframes slideUp {
   0% {

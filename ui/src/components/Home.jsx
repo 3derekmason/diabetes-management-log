@@ -31,13 +31,13 @@ const Home = () => {
         </Toolbar>
       </AppBar>
       <Card className='homePage' style={{ background: '#121212' }}>
-        <MainToolbar data={{ handleCreateOpen }} />
+        <MainToolbar handleCreateOpen={handleCreateOpen} />
         <div className='tileContainer'>
           {entries.map((entry, i) => {
-            return <MainTile data={{ entry }} key={i} />
+            return <MainTile entry={entry} key={i} />
           })}
         </div>
-        <CreateNew details={{ createOpen, handleCreateClose, handleCreateOpen }} />
+        <CreateNew createOpen={createOpen} close={handleCreateClose} />
       </Card>
     </div>
   )

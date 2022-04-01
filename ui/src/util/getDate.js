@@ -1,7 +1,7 @@
 // Format date from db result
 
 const getDate = dateString => {
-  return dateString.split(',')[0]
+  return typeof dateString === 'string' ? dateString.split(',')[0] : ''
 }
 
-export default getDate
+module.exports = getDate

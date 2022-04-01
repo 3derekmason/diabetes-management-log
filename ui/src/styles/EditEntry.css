@@ -1,0 +1,54 @@
+.editModal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.editBox {
+  box-sizing: border-box;
+  width: 45%;
+  height: 60%;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 32px;
+  background: #333;
+  color: #fff;
+  animation: slideRight 0.25s;
+}
+.editBox:focus {
+  outline: none;
+}
+@keyframes slideRight {
+  0% {
+    scale: (0.25);
+    transform: translateX(-250%);
+  }
+  100% {
+    scale: (1);
+    transform: translateX(0%);
+  }
+}
+
+.editHeader {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  align-items: center;
+  flex-direction: column;
+  color: #e0f7fa;
+}
+
+.editRow {
+  box-sizing: border-box;
+  padding: 8px;
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

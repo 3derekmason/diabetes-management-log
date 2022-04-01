@@ -1,13 +1,17 @@
 //Format time from db result
 
 const getTime = timeString => {
+  if (!timeString) {
+    return ''
+  }
   const time = timeString.split(',')[1]
   const timeSegments = time.split(':')
-  const hour = timeSegments[0]
-  const min = timeSegments[1]
-  const ampm = timeSegments[2].split(' ')[1]
+  let hour = timeSegments[0]
+  hour = hour.slice(1)
+  let min = timeSegments[1]
+  let ampm = timeSegments[2].split(' ')[1]
 
-  return hour + ':' + min + ' ' + ampm
+  return typeof timeString === 'string' ? hour + ':' + min + ' ' + ampm : ''
 }
 
-export default getTime
+module.exports = getTime

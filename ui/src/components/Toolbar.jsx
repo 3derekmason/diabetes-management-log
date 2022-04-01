@@ -6,7 +6,7 @@ import setValueColor from '../util/setValueColor'
 import calcAverage from '../util/calcAverage'
 import AppContext from '../context.js'
 
-const MainToolbar = ({ data }) => {
+const MainToolbar = ({ handleCreateOpen }) => {
   const { entries, setLowVal, setHighVal } = useContext(AppContext)
 
   return (
@@ -20,7 +20,7 @@ const MainToolbar = ({ data }) => {
         </Typography>
       </div>
       <div className='filter'>
-        <Typography>Order by: </Typography>
+        <Typography variant='body2'>Order by: </Typography>
         <Button
           variant='outlined'
           size='small'
@@ -52,7 +52,7 @@ const MainToolbar = ({ data }) => {
           High to Low
         </Button>
       </div>
-      <Button variant='contained' onClick={data.handleCreateOpen}>
+      <Button variant='contained' onClick={handleCreateOpen}>
         LOG ENTRY
       </Button>
     </Paper>

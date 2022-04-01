@@ -2,9 +2,15 @@
 
 const calcAverage = entryArray => {
   let sum = 0
+  //Handle empty array or invalid argument type
+  if (entryArray.length < 1 || !Array.isArray(entryArray)) {
+    return 0
+  }
   entryArray.forEach(entry => {
-    sum += entry['value']
+    // check for a value property, if doesnt exist, sum doesnt increase
+    sum += entry['value'] ? entry['value'] : 0
   })
+  // Average = sum/number of entries
   return Math.floor(sum / entryArray.length)
 }
-export default calcAverage
+module.exports = calcAverage
