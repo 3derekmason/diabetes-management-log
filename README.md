@@ -15,9 +15,13 @@
 
 **Diabetes Management Log** ( or _DML_ ) is a single page application where diabetics can track their blood sugar levels.
 
+
 Users can log a new value with specialized comments for each entry, remove, or update an existing entry at any time.
 
 Glucose values are displayed according to ranges: _Low, Normal, High, Very High_
+
+**Diabetes Management Log** ( or _DML_ ) is a simple single page application where diabetics can track their blood sugar levels.
+Users can log a new value with specialized comments for each entry, or remove an existing entry at any time.
 
 **Additional features** include the option to sort by date or glucose value, a detailed entry view, and an overall average glucose tracker.
 
