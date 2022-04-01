@@ -1,5 +1,5 @@
 import { Button, Card, Typography } from '@mui/material'
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 
 import '../styles/MainTile.css'
 
@@ -19,6 +19,8 @@ const MainTile = ({ data }) => {
   const handleDetailOpen = () => setDetailOpen(true)
   const handleDetailClose = () => setDetailOpen(false)
 
+  const fontColor = useMemo(() => setValueColor(data.entry.value), [data.entry.value])
+
   return (
     <Card className='mainTile' style={{ background: '#212121', color: '#Fff' }}>
       <Typography element='h4' variant='subtitle1' style={{ marginLeft: '24px' }}>
@@ -34,7 +36,7 @@ const MainTile = ({ data }) => {
       <Button className='deleteButton' onClick={handleDeleteOpen} size='small' style={{ color: '#d50000' }}>
         X
       </Button>
-      <DetailedView details={{ entry: data.entry, detailOpen, handleDetailClose }} />
+      <DetailedView details={{ entry: data.entry, detailOpen, handleDetailClose, fontColor }} />
       <Delete details={{ deleteOpen, handleDeleteClose, id: data.entry.id }} />
     </Card>
   )

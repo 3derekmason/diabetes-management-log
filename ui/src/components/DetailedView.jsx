@@ -1,4 +1,4 @@
-import { useReducer } from 'react'
+import { useMemo, useReducer } from 'react'
 import { Box, Button, Modal, Typography } from '@mui/material'
 
 import EditEntry from './EditEntry.jsx'
@@ -10,6 +10,7 @@ import getTime from '../util/getTime'
 import '../styles/DetailModal.css'
 
 const DetailedView = ({ details }) => {
+  // Edit entry modal controls
   const initiallyOpen = { isEditOpen: false }
   const editModalReducer = (state, action) => {
     switch (action.type) {
@@ -22,7 +23,6 @@ const DetailedView = ({ details }) => {
     }
   }
   const [state, dispatch] = useReducer(editModalReducer, initiallyOpen)
-
   const handleEditOpen = () => {
     dispatch({ type: 'open' })
   }
@@ -42,13 +42,13 @@ const DetailedView = ({ details }) => {
           </div>
           <div className='detailRow'>
             <Typography variant='caption'>Blood Sugar: </Typography>
-            <Typography variant='h1' style={{ color: setValueColor(details.entry.value) }}>
+            <Typography variant='h1' style={{ color: details.fontColor }}>
               {details.entry.value}
             </Typography>
           </div>
           <div className='detailRow'>
             <Typography variant='caption'>Range:</Typography>
-            <Typography variant='caption' style={{ color: setValueColor(details.entry.value) }}>
+            <Typography variant='caption' style={{ color: details.fontColor }}>
               {setRangeValue(details.entry?.value)}
             </Typography>
           </div>
