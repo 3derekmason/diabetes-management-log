@@ -31,7 +31,7 @@ const Home = () => {
         </Toolbar>
       </AppBar>
       <Card className='homePage' style={{ background: '#121212' }}>
-        <MainToolbar data={{ handleCreateOpen }} />
+        <MainToolbar nandleCreateOpen={handleCreateOpen} />
         <div className='tileContainer'>
           {entries.map((entry, i) => {
             return <MainTile entry={entry} key={i} />
