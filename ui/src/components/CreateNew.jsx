@@ -5,7 +5,7 @@ import client from '../client'
 import '../styles/CreateNew.css'
 import AppContext from '../context'
 
-const CreateNew = ({ details }) => {
+const CreateNew = ({ createOpen, close }) => {
   const { getAllEntries } = useContext(AppContext)
 
   // Blank form values
@@ -28,11 +28,11 @@ const CreateNew = ({ details }) => {
       .catch(err => console.log(err))
     // reorder by most recent if not
     getAllEntries()
-    details.handleCreateClose()
+    close()
   }
 
   return (
-    <Modal open={details.createOpen} onClose={details.handleCreateClose} className='createNew'>
+    <Modal open={createOpen} onClose={close} className='createNew'>
       <Card style={{ background: '#e0e0e0', color: '#121212' }} className='createNewEntry'>
         <Typography variant='h6' style={{ color: '#212121' }}>
           What is your blood sugar?
