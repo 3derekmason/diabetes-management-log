@@ -6,9 +6,9 @@ import '../styles/EditEntry.css'
 import getDate from '../util/getDate'
 import getTime from '../util/getTime'
 
-const EditEntry = ({ util }) => {
-  const [newGlucose, setNewGlucose] = useState(util.entry?.value)
-  const [newComments, setNewComments] = useState(util.entry?.comment)
+const EditEntry = ({ data, handleEditClose }) => {
+  const [newGlucose, setNewGlucose] = useState(data.entry?.value)
+  const [newComments, setNewComments] = useState(data.entry?.comment)
 
   const handleUpdate = () => {
     const newEntryData = {
@@ -16,17 +16,17 @@ const EditEntry = ({ util }) => {
       comments: newComments
     }
     client
-      .put(`/entries/${util.entry.id}`, newEntryData)
+      .put(`/entries/${data.entry.id}`, newEntryData)
       .then(res => console.log(res))
       .catch(err => console.log(err))
-    util.handleEditClose()
+    handleEditClose()
   }
   return (
-    <Modal open={util.editOpen} onClose={util.handleEditClose} className='editModal'>
+    <Modal open={data.state.isEditOpen} onClose={handleEditClose} className='editModal'>
       <Box className='editBox'>
         <div className='editHeader'>
-          <Typography variant='h4'>{getDate(util.entry.date)}</Typography>
-          <Typography variant='body2'>{getTime(util.entry.date)}</Typography>
+          <Typography variant='h4'>{getDate(data.entry.date)}</Typography>
+          <Typography variant='body2'>{getTime(data.entry.date)}</Typography>
         </div>
         <Card className='editRow' style={{ background: '#e0f7fa' }}>
           <Typography variant='h6'>Edit blood sugar: </Typography>

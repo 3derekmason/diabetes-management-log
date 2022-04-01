@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useReducer } from 'react'
 import { Box, Button, Modal, Typography } from '@mui/material'
 
 import EditEntry from './EditEntry.jsx'
@@ -10,12 +10,25 @@ import getTime from '../util/getTime'
 import '../styles/DetailModal.css'
 
 const DetailedView = ({ details }) => {
-  const [editOpen, setEditOpen] = useState(false)
-  const handleEditOpen = () => setEditOpen(true)
-  const handleEditClose = () => setEditOpen(false)
+  const initiallyOpen = { isEditOpen: false }
+  const editModalReducer = (state, action) => {
+    switch (action.type) {
+      case 'open':
+        return { isEditOpen: true }
+      case 'close':
+        return { isEditOpen: false }
+      default:
+        throw new Error()
+    }
+  }
+  const [state, dispatch] = useReducer(editModalReducer, initiallyOpen)
+
+  const handleEditOpen = () => {
+    dispatch({ type: 'open' })
+  }
 
   return (
-    <div>
+    <>
       <Modal open={details.detailOpen} onClose={details.handleDetailClose} className='detailModal'>
         <Box className='detailView'>
           <div className='detailHeader'>
@@ -52,8 +65,8 @@ const DetailedView = ({ details }) => {
           </Button>
         </Box>
       </Modal>
-      <EditEntry util={{ editOpen: editOpen, handleEditClose: handleEditClose, entry: details.entry }} />
-    </div>
+      <EditEntry data={{ entry: details.entry, state: state }} handleEditClose={() => dispatch({ type: 'close' })} />
+    </>
   )
 }
 
