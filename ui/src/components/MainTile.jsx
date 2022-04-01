@@ -36,7 +36,12 @@ const MainTile = ({ data }) => {
       <Button className='deleteButton' onClick={handleDeleteOpen} size='small' style={{ color: '#d50000' }}>
         X
       </Button>
-      <DetailedView details={{ entry: data.entry, detailOpen, handleDetailClose, fontColor }} />
+      <DetailedView
+        entry={data.entry}
+        detailOpen={detailOpen}
+        handleDetailClose={handleDetailClose}
+        fontColor={fontColor}
+      />
       <Delete details={{ deleteOpen, handleDeleteClose, id: data.entry.id }} />
     </Card>
   )
